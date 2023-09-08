@@ -1,0 +1,60 @@
+$color: #000;
+.menu {
+  display: flex;
+  justify-content: center;
+  &-item {
+      + .menu-item {
+        @include pc {
+          margin-left: 20px;
+        }
+      }
+      &_link {
+      color: $color;
+      }
+  }
+  @include sp {
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    &-item {
+      width: 100%;
+      a {
+        display: block;
+        text-align: center;
+        padding: 1.5rem 0;
+        border-bottom: 0.1rem solid #000;
+      }
+    }
+  }
+}
+.g-nav {
+  margin: 0 2rem 0 auto;
+  @include sp {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    &.open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.page-main {
+  padding: 6rem 0 10rem;
+}
+.page-title {
+  text-align: center;
+  @include fz(48, 56);
+  margin: 0 0 6rem;
+}

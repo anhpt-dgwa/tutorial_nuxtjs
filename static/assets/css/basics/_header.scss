@@ -1,0 +1,182 @@
+/** header area
+--------------------------------------- **/
+.page-header {
+    padding: 36px 0px;
+    
+}
+.header-logo {
+    align-self: center;
+}
+.site-logo {
+    max-width: 208px;
+    line-height: 0;
+    a {
+        display: block;
+    }
+}
+.gnav {
+    margin: 40px 0px 56px 0px;
+    transition: all 100ms cubic-bezier(1, 0, 0, 1);
+    .site-logo_fixed {
+        display: none;
+    }
+    &.fixed {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        margin: 0;
+        padding: 15px 0px;
+        position: fixed;
+        z-index: 9;
+        width: 100%;
+        background: #fff;
+        top: 0;
+        left: 0;
+        .site-logo_fixed {
+            align-self: center;
+            transition: all 400ms cubic-bezier(1, 0, 0, 1);
+            display: block;
+            img {
+                max-width: 200px;
+            }
+        }
+        .menu {
+            margin: 0;
+            /*li {
+                display: inline-table;
+            }*/
+        }
+    }
+}
+.menu {
+    display: flex;
+    flex-flow: row wrap;
+    transition: all 400ms cubic-bezier(1, 0, 0, 1);
+    li {
+        width: calc(100% / 6);
+        box-sizing: border-box;
+        text-align: center;
+        border-left: 2px solid #575757;
+        &:last-child {
+            border-right: 2px solid #575757;
+        }
+        a {
+            display: block;
+            color: #454545;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            line-height: 1;
+            padding: 6px 0px;
+            position: relative;
+            &:after {
+                content: "";
+                width: 0%;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                left: inherit;
+                background: #fafafa;
+                transition: all 400ms cubic-bezier(1, 0, 0, 1);
+                transition-timing-function: cubic-bezier(1, 0, 0, 1);
+            }
+            span {
+                position: relative;
+                z-index: 2;
+            }
+            &:hover {
+                color: #9aaf24;
+                &:after {
+                    right: inherit;
+                    left: 0;
+                    width: 100%;
+                }
+            }
+            &.active {
+                color: #9aaf24;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .gnav {
+        display: block !important;
+         &.fixed {
+            display: flex !important;
+         }
+    }
+    
+}
+@media screen and (max-width: 767px) {
+    .toggle-menu {
+        display: flex;
+    }
+    .site-logo {
+        position: relative;
+        z-index: 100;
+        margin: 0;
+        line-height: 0;
+        img {
+            max-width: 207px;
+            height: auto;
+        }
+    }
+    .gnav {
+        position: fixed;
+        left: 0;
+        width: calc(100% + 30px);
+        top: 71px;
+        margin: 0 -15px;
+        background: rgba(255,255,255, .95);
+        display: none;
+        transition: all 0ms cubic-bezier(1, 0, 0, 1);
+        z-index: 9;
+        &.fixed {
+            position: fixed;
+            top: 71px;
+            padding: 0;
+            background: rgba(255,255,255, .95);
+            box-shadow: none;
+            display: none;
+            .site-logo_fixed {
+                display: none;
+            }
+        }
+    }
+    .menu {
+        display: block;
+        li {
+            width: 100%;
+            border-top: 1px solid #cccccc;
+            border-left: none;
+            padding: 0px;
+            &:last-child {
+                border-right: none;
+                border-bottom: 1px solid #cccccc;
+            }
+            a {
+                padding: 15px 0px; 
+            }
+        }
+    }
+    .page-header {
+        padding: 20px 0px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index: 10;
+        width: 100%;
+        .container {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            #hambuger {
+                align-self: center;
+            }
+        }
+    }
+}

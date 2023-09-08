@@ -1,0 +1,65 @@
+.btn {
+    width: 37rem;
+    height: 7rem;
+    border: 0.5rem solid $color_light_gray;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: $color_base;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-family: $font_en;
+    letter-spacing: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all .4s ease-in-out;
+
+    &:hover {
+        background-color: $color_main;
+        opacity: 1;
+        .arrow-cycle {
+            width: 4.8rem;
+            height: 4.8rem;
+            right: 1.1rem;
+            margin-top: -2.4rem;
+            .arr {
+                width: 3.4rem;
+                height: 3.4rem;
+                .svg {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &._gray {
+        background-color: $color_gray;
+        color: $color_base;
+        .arrow-cycle {
+            border-color: $color_base;
+            .arr {
+                background-color: $color_base;
+                .svg {
+                    path {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        &:hover {
+            background-color: #fff;
+            .arrow-cycle {
+                border-color: $color_base;
+                .arr {
+                    background-color: $color_base;
+                }
+            }
+        }
+    }
+
+    @include sp {
+        width: 100%;
+        max-width: 33.5rem;
+    }
+}

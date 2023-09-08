@@ -1,0 +1,16 @@
+/* css - footer
+-----------------------------------------------------*/
+.copyright {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    display: block;
+}
+@media screen and (max-width: 767px) {
+    .copyright {
+        font-size: 12px;
+    }
+}
